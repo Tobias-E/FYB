@@ -2,7 +2,7 @@
 import { GlobalStyle } from './utils';
 import { Header, Footer, Main } from './organisms';
 
-function App() {
+const App: React.FC = () => {
 	return (
 		<div className='App'>
 			<GlobalStyle />
@@ -11,6 +11,6 @@ function App() {
 			<Footer />
 		</div>
 	);
-}
+};
 
 export default App;
