@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // Imported components
-import { theme } from '../utils';
+// import { theme } from '../utils';
 
 export const Beers: React.FC = () => {
 	return (
