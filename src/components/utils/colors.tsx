@@ -6,7 +6,7 @@ interface Icolor {
 // Exports
 export const black: Icolor = {
 	100: '#303030',
-	200: '#000000',
+	200: 'rgb(0, 0, 0, 0.25)',
 };
 
 export const white: Icolor = {

@@ -13,6 +13,7 @@ export const theme: Itheme = {
 	backgroundColor: yellow[100],
 	secondaryBackgroundColor: white[200],
 	buttonColor: green[100],
+	shadowColor: black[200],
 	primaryFont,
 	headerFont,
 	tertiaryColor: blue[200],
