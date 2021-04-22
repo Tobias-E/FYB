@@ -4,7 +4,7 @@ interface ItypeScale {
 }
 
 // Exports
-export const primaryFont: string = '"Ubuntu", monospace';
+export const primaryFont: string = '"Roboto"';
 export const headerFont: string = '"Biryani", roboto';
 
 export const typeScale: ItypeScale = {

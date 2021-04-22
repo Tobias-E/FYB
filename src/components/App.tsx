@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
 // Imported Components
-import { GlobalStyle } from './utils';
+import { GlobalStyle, theme } from './utils';
 import { Header, Footer } from './organisms';
 import { Beers, Venues, Contact } from './pages';
 
 const App: React.FC = () => {
 	return (
-		<div className='App'>
+		<Container className='App'>
 			<Router>
 				<GlobalStyle />
 				<Header />
@@ -24,8 +25,18 @@ const App: React.FC = () => {
 				</Switch>
 				<Footer />
 			</Router>
-		</div>
+		</Container>
 	);
 };
 
 export default App;
+
+const Container = styled.div`
+	height: 100vh;
+	background: linear-gradient(
+			166.56deg,
+			${theme.secondaryBackgroundColor} 21.3%,
+			rgba(255, 255, 255, 0) 111.45%
+		),
+		${theme.backgroundColor};
+`;

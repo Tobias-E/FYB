@@ -11,6 +11,7 @@ export const theme: Itheme = {
 	secondaryColor: white[100],
 	textColor: black[100],
 	backgroundColor: yellow[100],
+	secondaryBackgroundColor: white[200],
 	buttonColor: green[100],
 	primaryFont,
 	headerFont,

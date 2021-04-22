@@ -10,16 +10,16 @@ export const black: Icolor = {
 };
 
 export const white: Icolor = {
-	100: '#fcfcfc',
-	200: '#ffffff',
+	100: 'rgb(252, 252, 252, 0.9)',
+	200: '#fffffa',
 };
 
 export const green: Icolor = {
-	100: '#E1FFD7',
+	100: 'rgb(225, 255, 215, 0.9)',
 };
 
 export const yellow: Icolor = {
-	100: '#ffffbb',
+	100: 'rgb(255, 255, 187, 0.9)',
 };
 
 export const blue: Icolor = {
