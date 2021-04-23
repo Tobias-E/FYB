@@ -15,7 +15,7 @@ export const Beers: React.FC = () => {
 	const [, setUserInput] = useRecoilState(inputStorage);
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data: any) => setUserInput(data.input);
-	const [show, setShow] = useState(false);
+	const [, setShow] = useState(false);
 
 	return (
 		<Container>
