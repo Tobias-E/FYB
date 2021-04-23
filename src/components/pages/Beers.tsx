@@ -1,12 +1,22 @@
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+
+// Assets
+import search from '../../assets/search.svg';
 
 // Imported components
 import { theme } from '../utils';
-import search from '../../assets/search.svg';
-import arrow from '../../assets/arrow.svg';
-import hydra from '../../assets/evenmorehydra.svg';
+import { Beer } from '../templates';
+import { inputStorage } from '../Recoil';
 
 export const Beers: React.FC = () => {
+	const [, setUserInput] = useRecoilState(inputStorage);
+	const { register, handleSubmit } = useForm();
+	const onSubmit = (data: any) => setUserInput(data.input);
+	const [show, setShow] = useState(false);
+
 	return (
 		<Container>
 			<Searchpanel>
@@ -17,57 +27,25 @@ export const Beers: React.FC = () => {
 						but doesn’t know where to buy it?
 					</p>
 				</ContextContainer>
-				<Form>
-					<Input placeholder='Search'></Input>
-					<Button>
+				<Form onSubmit={handleSubmit(onSubmit)}>
+					<Input type='text' placeholder='Search' {...register('input')}></Input>
+					{/* errors && errors.input */}
+					<Button
+						type='submit'
+						id='submit'
+						onClick={() => {
+							setShow(true);
+						}}
+					>
 						<Img src={search} alt='search button' />
 					</Button>
 				</Form>
 			</Searchpanel>
-			<Beer>
-				<ProductImg src={hydra} alt='product image' />
-				<TextContainer>
-					<h3>Even more hydra</h3>
-					<H5>Evil twin brewing NYC | Mortalis Brewing Company</H5>
-					<p>ABV – 7%</p>
-				</TextContainer>
-				<Icon src={arrow} alt='arrow' />
-			</Beer>
+			{show && <Beer />}
 		</Container>
 	);
 };
 
-const Beer = styled.div`
-	width: 70vw;
-	height: 12rem;
-	background-color: ${theme.secondaryColor};
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	box-shadow: 2px 4px 10px ${theme.shadowColor};
-	border-radius: 20px;
-`;
-
-const ProductImg = styled.img`
-	height: 85%;
-`;
-
-const TextContainer = styled.div`
-	padding: 2rem 1rem;
-	display: flex;
-	flex-direction: column;
-`;
-
-const H5 = styled.h5`
-	margin: 0.1rem;
-`;
-
-const Icon = styled.img`
-	justify-self: flex-end;
-	margin: 0 1.3rem 0 auto;
-`;
-
-// STAY!
 const Container = styled.main`
 	display: flex;
 	flex-direction: column;
@@ -105,6 +83,7 @@ const Input = styled.input`
 	border: 0;
 	border-radius: 20px;
 	box-shadow: 2px 4px 15px ${theme.shadowColor};
+	outline: none;
 `;
 
 const Button = styled.button`

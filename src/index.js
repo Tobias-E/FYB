@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import { RecoilRoot } from 'recoil';
+import { ApolloProvider } from '@apollo/client';
 
 // Imported Components
 import App from './components/App';
+import { client } from './components/client';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<RecoilRoot>
+			<ApolloProvider client={client}>
+				<App />
+			</ApolloProvider>
+		</RecoilRoot>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
