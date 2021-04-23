@@ -8,7 +8,7 @@ import { useRecoilState } from 'recoil';
 
 // Imported components
 import { theme } from '../utils';
-import { Beer } from '../templates';
+// import { Beer } from '../templates';
 import { inputStorage } from '../Recoil';
 
 export const Beers: React.FC = () => {
@@ -43,7 +43,7 @@ export const Beers: React.FC = () => {
 					</Button>
 				</Form>
 			</Searchpanel>
-			{show && <Beer />}
+			{/* show && <Beer /> */}
 		</Container>
 	);
 };
@@ -97,4 +97,4 @@ const Button = styled.button`
 	right: 15px;
 `;
 
-const Img = styled.img``;
+// const Img = styled.img``;
