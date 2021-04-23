@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 
 // Assets
-import search from '../../assets/search.svg';
+// import search from '../../assets/search.svg';
 
 // Imported components
 import { theme } from '../utils';
@@ -37,7 +37,9 @@ export const Beers: React.FC = () => {
 							setShow(true);
 						}}
 					>
-						<Img src={search} alt='search button' />
+						{' '}
+						Press
+						{/* <Img src={search} alt='search button' /> */}
 					</Button>
 				</Form>
 			</Searchpanel>
