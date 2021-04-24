@@ -4,18 +4,18 @@ import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 
 // Assets
-// import search from '../../assets/search.svg';
+import search from '../../assets/search.svg';
 
 // Imported components
 import { theme } from '../utils';
-// import { Beer } from '../templates';
+import { Beer } from '../templates';
 import { inputStorage } from '../Recoil';
 
 export const Beers: React.FC = () => {
 	const [, setUserInput] = useRecoilState(inputStorage);
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data: any) => setUserInput(data.input);
-	const [, setShow] = useState(false);
+	const [show, setShow] = useState(false);
 
 	return (
 		<Container>
@@ -37,13 +37,11 @@ export const Beers: React.FC = () => {
 							setShow(true);
 						}}
 					>
-						{' '}
-						Press
-						{/* <Img src={search} alt='search button' /> */}
+						<Img src={search} alt='search button' />
 					</Button>
 				</Form>
 			</Searchpanel>
-			{/* show && <Beer /> */}
+			{show && <Beer />}
 		</Container>
 	);
 };
@@ -97,4 +95,4 @@ const Button = styled.button`
 	right: 15px;
 `;
 
-// const Img = styled.img``;
+const Img = styled.img``;

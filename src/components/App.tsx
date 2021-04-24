@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Imported Components
 import { GlobalStyle, theme } from './utils';
-import { Header, Footer } from './organisms';
+import { Header } from './organisms';
 import { Beers, Venues, Contact } from './pages';
 
 const App: React.FC = () => {
@@ -23,7 +23,6 @@ const App: React.FC = () => {
 						<Contact />
 					</Route>
 				</Switch>
-				<Footer />
 			</Router>
 		</Container>
 	);
@@ -32,7 +31,8 @@ const App: React.FC = () => {
 export default App;
 
 const Container = styled.div`
-	height: 100vh;
+	min-height: 100vh;
+	height: 100%;
 	background: linear-gradient(
 			166.56deg,
 			${theme.secondaryBackgroundColor} 21.3%,
