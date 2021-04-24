@@ -4,7 +4,6 @@ import { useRecoilValue } from 'recoil';
 
 // Assets
 import arrow from '../../assets/arrow.svg';
-// import hydra from '../../assets/evenmorehydra.svg';
 
 // Imported components
 import { theme } from '../utils';
@@ -28,7 +27,6 @@ const BEER = gql`
 `;
 
 // Interfaces
-
 interface IbeerVars {
 	item: string;
 }

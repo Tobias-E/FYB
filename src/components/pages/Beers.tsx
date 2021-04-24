@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 
 // Assets
-import search from '../../assets/search.svg';
+import search from '../../../src/assets/search.svg';
 
 // Imported components
 import { theme } from '../utils';
@@ -47,6 +47,7 @@ export const Beers: React.FC = () => {
 };
 
 const Container = styled.main`
+	padding-bottom: 4rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
