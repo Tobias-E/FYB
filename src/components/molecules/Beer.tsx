@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useQuery, gql } from '@apollo/client';
 import { useRecoilValue } from 'recoil';
+import { Link } from 'react-router-dom';
 
 // Assets
 import arrow from '../../assets/arrow.svg';
@@ -60,7 +61,7 @@ export const Beer = () => {
 	return (
 		<>
 			{data.beers.map(({ id, title, alkohol, image, breweries }) => (
-				<Container key={id}>
+				<Container key={id} to={`/beer/${id}`}>
 					<ProductImg src={image[0].url} alt='product image' />
 					<TextContainer>
 						<h3>{title}</h3>
@@ -74,7 +75,7 @@ export const Beer = () => {
 	);
 };
 
-const Container = styled.div`
+const Container = styled(Link)`
 	margin-bottom: 2.5rem;
 	padding: 1rem 0 1rem 1.5rem;
 	width: 70vw;

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { GlobalStyle, theme } from './utils';
 import { Header } from './organisms';
 import { Beers, Venues, Contact } from './pages';
+import { SelectedBeer } from './templates';
 
 const App: React.FC = () => {
 	return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
 					<Route exact path='/contact'>
 						<Contact />
 					</Route>
+					<Route path='/beer/:id' children={<SelectedBeer />} />
 				</Switch>
 			</Router>
 		</Container>
