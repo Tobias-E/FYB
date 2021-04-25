@@ -54,7 +54,7 @@ export const Beer = () => {
 	});
 	console.log(data);
 	if (loading) return <h3>Loading...</h3>;
-	if (error) return <h3>Error </h3>;
+	if (error) return <h3>Error 😱</h3>;
 	if (data === undefined) return <h2>The beer is undefined, sorry 😢</h2>;
 	// if (data.beers.length === 0) return <h2>The beer doesn't exist in our database, sorry 😢</h2>;
 
@@ -86,6 +86,8 @@ const Container = styled(Link)`
 	align-items: center;
 	box-shadow: 2px 4px 10px ${theme.shadowColor};
 	border-radius: 20px;
+	text-decoration: none;
+	color: ${theme.textColor};
 `;
 
 const ProductImg = styled.img`
